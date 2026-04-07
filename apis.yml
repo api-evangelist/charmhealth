@@ -4,8 +4,7 @@ url: >-
 apis:
   - aid: charmhealth:charmhealth
     name: CharmHealth
-    tags:
-      - API
+    tags: []
     humanURL: ' https://www.charmhealth.com/resources/fhir/index.html'
     properties:
       - url: ' https://www.charmhealth.com/resources/fhir/index.html'
@@ -17,11 +16,11 @@ apis:
       EHR.
 name: CharmHealth
 tags:
-  - Healthcare
   - EHR
   - EMR
-  - Patients
   - FHIR
+  - Healthcare
+  - Patients
 type: Index
 image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 access: 3rd-Party
