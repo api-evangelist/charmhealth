@@ -1,0 +1,72 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://www.charmhealth.com/schemas/observation.json",
+  "title": "CharmHealth FHIR Observation",
+  "description": "Subset of FHIR R4 Observation as exposed by CharmHealth EHR.",
+  "type": "object",
+  "required": ["resourceType", "status", "code"],
+  "properties": {
+    "resourceType": { "const": "Observation" },
+    "id": { "type": "string" },
+    "status": {
+      "type": "string",
+      "enum": [
+        "registered",
+        "preliminary",
+        "final",
+        "amended",
+        "corrected",
+        "cancelled",
+        "entered-in-error",
+        "unknown"
+      ]
+    },
+    "category": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "coding": {
+            "type": "array",
+            "items": { "$ref": "#/$defs/coding" }
+          }
+        }
+      }
+    },
+    "code": {
+      "type": "object",
+      "properties": {
+        "coding": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/coding" }
+        }
+      }
+    },
+    "subject": {
+      "type": "object",
+      "properties": {
+        "reference": { "type": "string" }
+      }
+    },
+    "effectiveDateTime": { "type": "string", "format": "date-time" },
+    "valueQuantity": {
+      "type": "object",
+      "properties": {
+        "value": { "type": "number" },
+        "unit": { "type": "string" },
+        "system": { "type": "string" },
+        "code": { "type": "string" }
+      }
+    }
+  },
+  "$defs": {
+    "coding": {
+      "type": "object",
+      "properties": {
+        "system": { "type": "string" },
+        "code": { "type": "string" },
+        "display": { "type": "string" }
+      }
+    }
+  }
+}

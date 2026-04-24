@@ -1,0 +1,40 @@
+extends:
+  - spectral:oas
+rules:
+  charmhealth-https-only:
+    description: All FHIR servers must use HTTPS.
+    severity: error
+    given: $.servers[*].url
+    then:
+      function: pattern
+      functionOptions:
+        match: '^https://'
+  charmhealth-smart-oauth:
+    description: SMART on FHIR security scheme must be defined.
+    severity: error
+    given: $.components.securitySchemes
+    then:
+      field: smartOnFhir
+      function: truthy
+  charmhealth-resource-tagging:
+    description: Each operation must declare a FHIR resource tag.
+    severity: warn
+    given: $.paths[*][get,post,put,delete,patch]
+    then:
+      field: tags
+      function: truthy
+  charmhealth-fhir-resource-paths:
+    description: FHIR resource paths should match PascalCase resource types.
+    severity: warn
+    given: $.paths
+    then:
+      function: pattern
+      functionOptions:
+        match: '^(/[A-Z][A-Za-z]+(\\/\\{id\\})?|/metadata)$'
+  charmhealth-operation-summary:
+    description: Operations must include a summary.
+    severity: warn
+    given: $.paths[*][get,post,put,delete,patch]
+    then:
+      field: summary
+      function: truthy

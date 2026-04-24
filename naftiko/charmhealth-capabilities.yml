@@ -1,0 +1,123 @@
+name: charmhealth-capabilities
+description: >-
+  Naftiko sandbox capabilities for the CharmHealth FHIR API. These capabilities
+  let agents read patient demographics, conditions, observations, medications,
+  and other US Core resources from the CharmHealth EHR using SMART on FHIR
+  authorization.
+provider: charmhealth
+version: '1.0'
+capabilities:
+  - id: charmhealth.patient.read
+    name: Read patient
+    description: Read a patient resource by FHIR id.
+    operationId: readPatient
+    inputs:
+      - name: id
+        type: string
+        required: true
+    outputs:
+      - name: patient
+        type: object
+    tags: [fhir, patient]
+  - id: charmhealth.patient.search
+    name: Search patients
+    description: Search patients by identifier, name, birthdate, or gender.
+    operationId: searchPatient
+    inputs:
+      - name: identifier
+        type: string
+        required: false
+      - name: name
+        type: string
+        required: false
+      - name: birthdate
+        type: string
+        required: false
+      - name: gender
+        type: string
+        required: false
+    outputs:
+      - name: bundle
+        type: object
+    tags: [fhir, patient, search]
+  - id: charmhealth.condition.search
+    name: Search conditions
+    description: Search Condition resources for a patient.
+    operationId: searchCondition
+    inputs:
+      - name: patient
+        type: string
+        required: true
+    outputs:
+      - name: bundle
+        type: object
+    tags: [fhir, condition, clinical]
+  - id: charmhealth.observation.search
+    name: Search observations
+    description: Search Observation resources for vitals, labs, and other measurements.
+    operationId: searchObservation
+    inputs:
+      - name: patient
+        type: string
+        required: true
+      - name: category
+        type: string
+        required: false
+      - name: code
+        type: string
+        required: false
+    outputs:
+      - name: bundle
+        type: object
+    tags: [fhir, observation, clinical]
+  - id: charmhealth.medication.search
+    name: Search medication requests
+    description: Search MedicationRequest resources for a patient.
+    operationId: searchMedicationRequest
+    inputs:
+      - name: patient
+        type: string
+        required: true
+      - name: status
+        type: string
+        required: false
+    outputs:
+      - name: bundle
+        type: object
+    tags: [fhir, medications]
+  - id: charmhealth.allergy.search
+    name: Search allergies
+    description: Search AllergyIntolerance resources for a patient.
+    operationId: searchAllergyIntolerance
+    inputs:
+      - name: patient
+        type: string
+        required: true
+    outputs:
+      - name: bundle
+        type: object
+    tags: [fhir, allergies]
+  - id: charmhealth.appointment.search
+    name: Search appointments
+    description: Search Appointment resources for a patient or date.
+    operationId: searchAppointment
+    inputs:
+      - name: patient
+        type: string
+        required: false
+      - name: date
+        type: string
+        required: false
+    outputs:
+      - name: bundle
+        type: object
+    tags: [fhir, scheduling]
+  - id: charmhealth.capability
+    name: Get FHIR capability statement
+    description: Retrieve the server CapabilityStatement to discover supported resources.
+    operationId: getCapabilityStatement
+    inputs: []
+    outputs:
+      - name: capabilityStatement
+        type: object
+    tags: [fhir, metadata]

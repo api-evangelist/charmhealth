@@ -1,0 +1,62 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://www.charmhealth.com/schemas/patient.json",
+  "title": "CharmHealth FHIR Patient",
+  "description": "Subset of FHIR R4 Patient as exposed by CharmHealth EHR.",
+  "type": "object",
+  "required": ["resourceType", "id"],
+  "properties": {
+    "resourceType": { "const": "Patient" },
+    "id": { "type": "string" },
+    "identifier": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "system": { "type": "string" },
+          "value": { "type": "string" }
+        }
+      }
+    },
+    "name": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "use": { "type": "string" },
+          "family": { "type": "string" },
+          "given": { "type": "array", "items": { "type": "string" } }
+        }
+      }
+    },
+    "gender": {
+      "type": "string",
+      "enum": ["male", "female", "other", "unknown"]
+    },
+    "birthDate": { "type": "string", "format": "date" },
+    "telecom": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "system": { "type": "string" },
+          "value": { "type": "string" },
+          "use": { "type": "string" }
+        }
+      }
+    },
+    "address": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "line": { "type": "array", "items": { "type": "string" } },
+          "city": { "type": "string" },
+          "state": { "type": "string" },
+          "postalCode": { "type": "string" },
+          "country": { "type": "string" }
+        }
+      }
+    }
+  }
+}
