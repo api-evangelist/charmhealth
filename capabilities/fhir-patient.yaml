@@ -1,0 +1,125 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: CharmHealth FHIR API — Patient
+  description: 'CharmHealth FHIR API — Patient. 2 operations. Lead operation: Search Patient. Self-contained Naftiko capability
+    covering one Charmhealth business surface.'
+  tags:
+  - Charmhealth
+  - Patient
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    CHARMHEALTH_API_KEY: CHARMHEALTH_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: fhir-patient
+    baseUri: https://ehr2.charmtracker.com/api/ehr/v2/fhir
+    description: CharmHealth FHIR API — Patient business capability. Self-contained, no shared references.
+    resources:
+    - name: Patient
+      path: /Patient
+      operations:
+      - name: searchpatient
+        method: GET
+        description: Search Patient
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: identifier
+          in: query
+          type: string
+        - name: name
+          in: query
+          type: string
+        - name: birthdate
+          in: query
+          type: string
+        - name: gender
+          in: query
+          type: string
+    - name: Patient-id
+      path: /Patient/{id}
+      operations:
+      - name: readpatient
+        method: GET
+        description: Read Patient
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    authentication:
+      type: bearer
+      token: '{{env.CHARMHEALTH_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: fhir-patient-rest
+    port: 8080
+    description: REST adapter for CharmHealth FHIR API — Patient. One Spectral-compliant resource per consumed operation,
+      prefixed with /v1.
+    resources:
+    - path: /v1/patient
+      name: patient
+      description: REST surface for Patient.
+      operations:
+      - method: GET
+        name: searchpatient
+        description: Search Patient
+        call: fhir-patient.searchpatient
+        with:
+          identifier: rest.identifier
+          name: rest.name
+          birthdate: rest.birthdate
+          gender: rest.gender
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/patient/{id}
+      name: patient-id
+      description: REST surface for Patient-id.
+      operations:
+      - method: GET
+        name: readpatient
+        description: Read Patient
+        call: fhir-patient.readpatient
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: fhir-patient-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for CharmHealth FHIR API — Patient. One tool per consumed operation, routed inline through this
+      capability's consumes block.
+    tools:
+    - name: search-patient
+      description: Search Patient
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: fhir-patient.searchpatient
+      with:
+        identifier: tools.identifier
+        name: tools.name
+        birthdate: tools.birthdate
+        gender: tools.gender
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: read-patient
+      description: Read Patient
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: fhir-patient.readpatient
+      outputParameters:
+      - type: object
+        mapping: $.

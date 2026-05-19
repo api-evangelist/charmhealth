@@ -1,0 +1,78 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: CharmHealth FHIR API — CareTeam
+  description: 'CharmHealth FHIR API — CareTeam. 1 operations. Lead operation: Search CareTeam. Self-contained Naftiko capability
+    covering one Charmhealth business surface.'
+  tags:
+  - Charmhealth
+  - CareTeam
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    CHARMHEALTH_API_KEY: CHARMHEALTH_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: fhir-careteam
+    baseUri: https://ehr2.charmtracker.com/api/ehr/v2/fhir
+    description: CharmHealth FHIR API — CareTeam business capability. Self-contained, no shared references.
+    resources:
+    - name: CareTeam
+      path: /CareTeam
+      operations:
+      - name: searchcareteam
+        method: GET
+        description: Search CareTeam
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: patient
+          in: query
+          type: string
+    authentication:
+      type: bearer
+      token: '{{env.CHARMHEALTH_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: fhir-careteam-rest
+    port: 8080
+    description: REST adapter for CharmHealth FHIR API — CareTeam. One Spectral-compliant resource per consumed operation,
+      prefixed with /v1.
+    resources:
+    - path: /v1/careteam
+      name: careteam
+      description: REST surface for CareTeam.
+      operations:
+      - method: GET
+        name: searchcareteam
+        description: Search CareTeam
+        call: fhir-careteam.searchcareteam
+        with:
+          patient: rest.patient
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: fhir-careteam-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for CharmHealth FHIR API — CareTeam. One tool per consumed operation, routed inline through this
+      capability's consumes block.
+    tools:
+    - name: search-careteam
+      description: Search CareTeam
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: fhir-careteam.searchcareteam
+      with:
+        patient: tools.patient
+      outputParameters:
+      - type: object
+        mapping: $.
