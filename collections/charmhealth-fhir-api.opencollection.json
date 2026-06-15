@@ -1,0 +1,454 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "CharmHealth FHIR API",
+    "version": "4.0.1"
+  },
+  "request": {
+    "auth": {
+      "type": "oauth2",
+      "flow": "client_credentials",
+      "accessTokenUrl": "https://ehr2.charmtracker.com/oauth/v2/token",
+      "credentials": {
+        "clientId": "{{clientId}}",
+        "clientSecret": "{{clientSecret}}"
+      }
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Capability",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get FHIR CapabilityStatement",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://ehr2.charmtracker.com/api/ehr/v2/fhir/metadata"
+          },
+          "docs": "Get FHIR CapabilityStatement"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Patient",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Read Patient",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://ehr2.charmtracker.com/api/ehr/v2/fhir/Patient/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Read Patient"
+        },
+        {
+          "info": {
+            "name": "Search Patient",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://ehr2.charmtracker.com/api/ehr/v2/fhir/Patient",
+            "params": [
+              {
+                "name": "identifier",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "name",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "birthdate",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "gender",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Search Patient"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "AllergyIntolerance",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Search AllergyIntolerance",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://ehr2.charmtracker.com/api/ehr/v2/fhir/AllergyIntolerance",
+            "params": [
+              {
+                "name": "patient",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "clinical-status",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Search AllergyIntolerance"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Condition",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Search Condition",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://ehr2.charmtracker.com/api/ehr/v2/fhir/Condition",
+            "params": [
+              {
+                "name": "patient",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "category",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Search Condition"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Encounter",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Search Encounter",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://ehr2.charmtracker.com/api/ehr/v2/fhir/Encounter",
+            "params": [
+              {
+                "name": "patient",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "date",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Search Encounter"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Observation",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Search Observation",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://ehr2.charmtracker.com/api/ehr/v2/fhir/Observation",
+            "params": [
+              {
+                "name": "patient",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "category",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "code",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "date",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Search Observation"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "MedicationRequest",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Search MedicationRequest",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://ehr2.charmtracker.com/api/ehr/v2/fhir/MedicationRequest",
+            "params": [
+              {
+                "name": "patient",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "status",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Search MedicationRequest"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Immunization",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Search Immunization",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://ehr2.charmtracker.com/api/ehr/v2/fhir/Immunization",
+            "params": [
+              {
+                "name": "patient",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Search Immunization"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "CarePlan",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Search CarePlan",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://ehr2.charmtracker.com/api/ehr/v2/fhir/CarePlan",
+            "params": [
+              {
+                "name": "patient",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Search CarePlan"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "CareTeam",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Search CareTeam",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://ehr2.charmtracker.com/api/ehr/v2/fhir/CareTeam",
+            "params": [
+              {
+                "name": "patient",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Search CareTeam"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "DocumentReference",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Search DocumentReference",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://ehr2.charmtracker.com/api/ehr/v2/fhir/DocumentReference",
+            "params": [
+              {
+                "name": "patient",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "type",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Search DocumentReference"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Practitioner",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Search Practitioner",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://ehr2.charmtracker.com/api/ehr/v2/fhir/Practitioner",
+            "params": [
+              {
+                "name": "identifier",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "name",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Search Practitioner"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Organization",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Search Organization",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://ehr2.charmtracker.com/api/ehr/v2/fhir/Organization"
+          },
+          "docs": "Search Organization"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Appointment",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Search Appointment",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://ehr2.charmtracker.com/api/ehr/v2/fhir/Appointment",
+            "params": [
+              {
+                "name": "patient",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "date",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Search Appointment"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
