@@ -5,7 +5,7 @@ description: >-
   Cycle Management, Patient Engagement, and TeleHealth tooling. CharmHealth exposes an HL7 FHIR R4 API conformant to the
   US Core Implementation Guide that lets third-party applications query patient medical records, manage clinical
   resources, and integrate with the EHR using SMART on FHIR OAuth 2.0 authorization.
-image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
 url: https://raw.githubusercontent.com/api-evangelist/charmhealth/refs/heads/main/apis.yml
 type: Index
 access: 3rd-Party
@@ -34,7 +34,7 @@ apis:
       (DocumentReference, QuestionnaireResponse, Provenance). Authentication uses SMART on FHIR with OAuth 2.0
       authorization code flow, PKCE for public clients, and JWT-assertion backend services authorization for system
       access.
-    image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
     humanURL: https://www.charmhealth.com/resources/fhir/index.html
     baseURL: https://ehr2.charmtracker.com/api/ehr/v2/fhir
     tags:
