@@ -3,16 +3,10 @@
   "feeds": [
     {
       "source": "https://www.charmhealth.com/blog/",
-      "feed_url": "https://www.charmhealth.com/blog/",
-      "title": "",
       "saved": 0,
-      "method": "none"
-    },
-    {
-      "source": "https://casestudy.charmhealth.com/charmhealth-case-study-landing-page/",
-      "error": "HTTPError"
+      "error": "404 page returned, no posts"
     }
   ],
   "post_count": 0,
-  "fetched": "2026-06-14T20:42:17Z"
+  "fetched": "2026-06-27T12:31:31Z"
 }
