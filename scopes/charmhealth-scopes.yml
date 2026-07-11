@@ -1,0 +1,56 @@
+generated: '2026-07-11'
+method: derived
+source: openapi/charmhealth-fhir-api-openapi.yml
+schemes:
+- name: smartOnFhir
+  source: openapi/charmhealth-fhir-api-openapi.yml
+  flows:
+  - flow: authorizationCode
+    authorizationUrl: https://ehr2.charmtracker.com/oauth/v2/auth
+    tokenUrl: https://ehr2.charmtracker.com/oauth/v2/token
+  - flow: clientCredentials
+    tokenUrl: https://ehr2.charmtracker.com/oauth/v2/token
+  description: SMART on FHIR authorization with patient/, user/, and system/ scopes.
+scopes:
+- scope: launch/patient
+  description: Patient context launch
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/charmhealth-fhir-api-openapi.yml
+- scope: patient/Condition.read
+  description: Read conditions
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/charmhealth-fhir-api-openapi.yml
+- scope: patient/MedicationRequest.read
+  description: Read medication orders
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/charmhealth-fhir-api-openapi.yml
+- scope: patient/Observation.read
+  description: Read observations
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/charmhealth-fhir-api-openapi.yml
+- scope: patient/Patient.read
+  description: Read patient demographic data
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/charmhealth-fhir-api-openapi.yml
+- scope: system/*.read
+  description: Backend services read access
+  flows:
+  - clientCredentials
+  sources:
+  - openapi/charmhealth-fhir-api-openapi.yml
+- scope: user/*.read
+  description: Read all user-accessible resources
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/charmhealth-fhir-api-openapi.yml

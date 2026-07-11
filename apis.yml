@@ -59,6 +59,8 @@ apis:
       - type: Spectral
         url: spectral/charmhealth-spectral.yml
 common:
+  - type: OAuthScopes
+    url: scopes/charmhealth-scopes.yml
   - type: GitHubOrganization
     url: https://github.com/CharmHealth
   - type: LinkedIn
