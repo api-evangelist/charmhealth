@@ -1,0 +1,30 @@
+generated: '2026-07-11'
+method: probed
+source: live DNS/TLS/HTTP probes of apis.yml + OpenAPI hosts
+hosts:
+- host: www.charmhealth.com
+  https: true
+  tls_version: TLSv1.3
+  cert_expires: Dec  2 23:59:59 2026 GMT
+  hsts: false
+- host: ehr2.charmtracker.com
+  https: true
+  tls_version: TLSv1.3
+  cert_expires: Sep  1 23:59:59 2026 GMT
+  hsts: null
+domains:
+- domain: charmhealth.com
+  dnssec: false
+  caa:
+  - 0 issuewild "digicert.com"
+  - 0 issuewild "sectigo.com"
+  - 0 issuewild "letsencrypt.org"
+  spf: true
+  dmarc: true
+  dmarc_policy: quarantine
+- domain: charmtracker.com
+  dnssec: false
+  caa: []
+  spf: true
+  dmarc: true
+  dmarc_policy: quarantine

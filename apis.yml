@@ -59,6 +59,12 @@ apis:
       - type: Spectral
         url: spectral/charmhealth-spectral.yml
 common:
+  - type: VulnerabilityDisclosure
+    url: security/charmhealth-vulnerability-disclosure.yml
+  - type: DomainSecurity
+    url: security/charmhealth-domain-security.yml
+  - type: Authentication
+    url: authentication/charmhealth-authentication.yml
   - type: OAuthScopes
     url: scopes/charmhealth-scopes.yml
   - type: GitHubOrganization

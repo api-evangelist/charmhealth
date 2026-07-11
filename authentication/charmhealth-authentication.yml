@@ -1,0 +1,23 @@
+generated: '2026-07-11'
+method: derived
+source: openapi/charmhealth-fhir-api-openapi.yml
+summary:
+  types:
+  - oauth2
+  oauth2_flows:
+  - authorizationCode
+  - clientCredentials
+schemes:
+- name: smartOnFhir
+  type: oauth2
+  flows:
+  - flow: authorizationCode
+    authorizationUrl: https://ehr2.charmtracker.com/oauth/v2/auth
+    tokenUrl: https://ehr2.charmtracker.com/oauth/v2/token
+    scopes: 6
+  - flow: clientCredentials
+    tokenUrl: https://ehr2.charmtracker.com/oauth/v2/token
+    scopes: 1
+  description: SMART on FHIR authorization with patient/, user/, and system/ scopes.
+  sources:
+  - openapi/charmhealth-fhir-api-openapi.yml
