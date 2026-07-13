@@ -2,11 +2,10 @@
   "repo": "charmhealth",
   "feeds": [
     {
-      "source": "https://www.charmhealth.com/blog/",
-      "saved": 0,
-      "error": "404 page returned, no posts"
+      "source": "https://casestudy.charmhealth.com/charmhealth-case-study-landing-page/",
+      "error": "HTTPError"
     }
   ],
   "post_count": 0,
-  "fetched": "2026-06-27T12:31:31Z"
+  "fetched": "2026-07-11T11:50:51Z"
 }
