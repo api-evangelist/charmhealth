@@ -59,6 +59,8 @@ apis:
       - type: Spectral
         url: spectral/charmhealth-spectral.yml
 common:
+  - type: AgenticAccess
+    url: agentic-access/charmhealth-agentic-access.yml
   - type: VulnerabilityDisclosure
     url: security/charmhealth-vulnerability-disclosure.yml
   - type: DomainSecurity
