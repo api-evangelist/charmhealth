@@ -1,0 +1,49 @@
+openapi: 3.1.0
+info:
+  title: CharmHealth FHIR AllergyIntolerance Capability API
+  description: HL7 FHIR R4 (4.0.1) REST API exposed by CharmHealth EHR conforming to the US Core 3.1.1 Implementation Guide. Supports SMART on FHIR authorization for patient-facing apps, provider-facing apps, and backend services. Resource paths follow FHIR conventions and accept standard FHIR search parameters.
+  version: 4.0.1
+  contact:
+    name: CharmHealth Developer Support
+    url: https://www.charmhealth.com/support/
+servers:
+- url: https://ehr2.charmtracker.com/api/ehr/v2/fhir
+  description: CharmHealth FHIR Production
+security:
+- smartOnFhir: []
+tags:
+- name: Capability
+  description: Server capability statement
+paths:
+  /metadata:
+    get:
+      operationId: getCapabilityStatement
+      summary: Get FHIR CapabilityStatement
+      tags:
+      - Capability
+      responses:
+        '200':
+          description: CapabilityStatement resource
+components:
+  securitySchemes:
+    smartOnFhir:
+      type: oauth2
+      description: SMART on FHIR authorization with patient/, user/, and system/ scopes.
+      flows:
+        authorizationCode:
+          authorizationUrl: https://ehr2.charmtracker.com/oauth/v2/auth
+          tokenUrl: https://ehr2.charmtracker.com/oauth/v2/token
+          scopes:
+            launch/patient: Patient context launch
+            patient/Patient.read: Read patient demographic data
+            patient/Observation.read: Read observations
+            patient/Condition.read: Read conditions
+            patient/MedicationRequest.read: Read medication orders
+            user/*.read: Read all user-accessible resources
+        clientCredentials:
+          tokenUrl: https://ehr2.charmtracker.com/oauth/v2/token
+          scopes:
+            system/*.read: Backend services read access
+externalDocs:
+  description: CharmHealth FHIR API Documentation
+  url: https://www.charmhealth.com/resources/fhir/index.html
