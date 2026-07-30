@@ -5,7 +5,20 @@ description: >-
   Cycle Management, Patient Engagement, and TeleHealth tooling. CharmHealth exposes an HL7 FHIR R4 API conformant to the
   US Core Implementation Guide that lets third-party applications query patient medical records, manage clinical
   resources, and integrate with the EHR using SMART on FHIR OAuth 2.0 authorization.
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+accessModel:
+  pricing: freemium
+  onboarding: self-serve
+  trial: false
+  try_now: true
+  public: false
+  label: Freemium · Self-serve signup
+  confidence: high
+  source:
+  - plans
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/charmhealth.png
 url: https://raw.githubusercontent.com/api-evangelist/charmhealth/refs/heads/main/apis.yml
 type: Index
 access: 3rd-Party
@@ -24,41 +37,317 @@ created: '2025-02-21'
 modified: '2026-05-19'
 specificationVersion: '0.20'
 apis:
-  - aid: charmhealth:fhir-api
-    name: CharmHealth FHIR API
-    description: >-
-      CharmHealth EHR FHIR API conforms to FHIR R4 (4.0.1) and the US Core STU 3.1.1 Implementation Guide. It supports
-      30+ FHIR resources covering clinical (AllergyIntolerance, Condition, Procedure, Immunization, MedicationRequest),
-      care coordination (CarePlan, CareTeam, Goal, Encounter), administrative (Patient, Practitioner, Organization,
-      Location, Appointment), diagnostic (DiagnosticReport, Observation), and documentation resources
-      (DocumentReference, QuestionnaireResponse, Provenance). Authentication uses SMART on FHIR with OAuth 2.0
-      authorization code flow, PKCE for public clients, and JWT-assertion backend services authorization for system
-      access.
-    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
-    humanURL: https://www.charmhealth.com/resources/fhir/index.html
-    baseURL: https://ehr2.charmtracker.com/api/ehr/v2/fhir
-    tags:
-      - FHIR
-      - HL7
-      - Healthcare
-      - SMART on FHIR
-      - US Core
-    properties:
-      - type: Documentation
-        url: https://www.charmhealth.com/resources/fhir/index.html
-      - type: Authentication
-        url: https://www.charmhealth.com/resources/fhir/authorization.html
-      - type: SMARTOnFHIR
-        url: https://www.charmhealth.com/resources/fhir/smart-on-fhir.html
-      - type: BulkExport
-        url: https://www.charmhealth.com/resources/fhir/bulk-data.html
-      - type: USCore
-        url: https://www.hl7.org/fhir/us/core/
-      - type: OpenAPI
-        url: openapi/charmhealth-fhir-api-openapi.yml
-      - type: Spectral
-        url: spectral/charmhealth-spectral.yml
+- aid: charmhealth:charmhealth-allergyintolerance-api
+  name: CharmHealth AllergyIntolerance API
+  description: Patient allergies and intolerances
+  humanURL: https://www.charmhealth.com/resources/fhir/index.html
+  baseURL: https://ehr2.charmtracker.com/api/ehr/v2/fhir
+  tags:
+  - AllergyIntolerance
+  properties:
+  - type: OpenAPI
+    url: openapi/charmhealth-allergyintolerance-api-openapi.yml
+  - type: Documentation
+    url: https://www.charmhealth.com/resources/fhir/index.html
+  - type: Authentication
+    url: https://www.charmhealth.com/resources/fhir/authorization.html
+  - type: SMARTOnFHIR
+    url: https://www.charmhealth.com/resources/fhir/smart-on-fhir.html
+  - type: BulkExport
+    url: https://www.charmhealth.com/resources/fhir/bulk-data.html
+  - type: USCore
+    url: https://www.hl7.org/fhir/us/core/
+  - type: Spectral
+    url: spectral/charmhealth-spectral.yml
+- aid: charmhealth:charmhealth-appointment-api
+  name: CharmHealth Appointment API
+  description: Scheduled appointments
+  humanURL: https://www.charmhealth.com/resources/fhir/index.html
+  baseURL: https://ehr2.charmtracker.com/api/ehr/v2/fhir
+  tags:
+  - Appointment
+  properties:
+  - type: OpenAPI
+    url: openapi/charmhealth-appointment-api-openapi.yml
+  - type: Documentation
+    url: https://www.charmhealth.com/resources/fhir/index.html
+  - type: Authentication
+    url: https://www.charmhealth.com/resources/fhir/authorization.html
+  - type: SMARTOnFHIR
+    url: https://www.charmhealth.com/resources/fhir/smart-on-fhir.html
+  - type: BulkExport
+    url: https://www.charmhealth.com/resources/fhir/bulk-data.html
+  - type: USCore
+    url: https://www.hl7.org/fhir/us/core/
+  - type: Spectral
+    url: spectral/charmhealth-spectral.yml
+- aid: charmhealth:charmhealth-capability-api
+  name: CharmHealth Capability API
+  description: Server capability statement
+  humanURL: https://www.charmhealth.com/resources/fhir/index.html
+  baseURL: https://ehr2.charmtracker.com/api/ehr/v2/fhir
+  tags:
+  - Capability
+  properties:
+  - type: OpenAPI
+    url: openapi/charmhealth-capability-api-openapi.yml
+  - type: Documentation
+    url: https://www.charmhealth.com/resources/fhir/index.html
+  - type: Authentication
+    url: https://www.charmhealth.com/resources/fhir/authorization.html
+  - type: SMARTOnFHIR
+    url: https://www.charmhealth.com/resources/fhir/smart-on-fhir.html
+  - type: BulkExport
+    url: https://www.charmhealth.com/resources/fhir/bulk-data.html
+  - type: USCore
+    url: https://www.hl7.org/fhir/us/core/
+  - type: Spectral
+    url: spectral/charmhealth-spectral.yml
+- aid: charmhealth:charmhealth-careplan-api
+  name: CharmHealth CarePlan API
+  description: Care plans
+  humanURL: https://www.charmhealth.com/resources/fhir/index.html
+  baseURL: https://ehr2.charmtracker.com/api/ehr/v2/fhir
+  tags:
+  - CarePlan
+  properties:
+  - type: OpenAPI
+    url: openapi/charmhealth-careplan-api-openapi.yml
+  - type: Documentation
+    url: https://www.charmhealth.com/resources/fhir/index.html
+  - type: Authentication
+    url: https://www.charmhealth.com/resources/fhir/authorization.html
+  - type: SMARTOnFHIR
+    url: https://www.charmhealth.com/resources/fhir/smart-on-fhir.html
+  - type: BulkExport
+    url: https://www.charmhealth.com/resources/fhir/bulk-data.html
+  - type: USCore
+    url: https://www.hl7.org/fhir/us/core/
+  - type: Spectral
+    url: spectral/charmhealth-spectral.yml
+- aid: charmhealth:charmhealth-careteam-api
+  name: CharmHealth CareTeam API
+  description: Care teams
+  humanURL: https://www.charmhealth.com/resources/fhir/index.html
+  baseURL: https://ehr2.charmtracker.com/api/ehr/v2/fhir
+  tags:
+  - CareTeam
+  properties:
+  - type: OpenAPI
+    url: openapi/charmhealth-careteam-api-openapi.yml
+  - type: Documentation
+    url: https://www.charmhealth.com/resources/fhir/index.html
+  - type: Authentication
+    url: https://www.charmhealth.com/resources/fhir/authorization.html
+  - type: SMARTOnFHIR
+    url: https://www.charmhealth.com/resources/fhir/smart-on-fhir.html
+  - type: BulkExport
+    url: https://www.charmhealth.com/resources/fhir/bulk-data.html
+  - type: USCore
+    url: https://www.hl7.org/fhir/us/core/
+  - type: Spectral
+    url: spectral/charmhealth-spectral.yml
+- aid: charmhealth:charmhealth-condition-api
+  name: CharmHealth Condition API
+  description: Diagnoses and problems
+  humanURL: https://www.charmhealth.com/resources/fhir/index.html
+  baseURL: https://ehr2.charmtracker.com/api/ehr/v2/fhir
+  tags:
+  - Condition
+  properties:
+  - type: OpenAPI
+    url: openapi/charmhealth-condition-api-openapi.yml
+  - type: Documentation
+    url: https://www.charmhealth.com/resources/fhir/index.html
+  - type: Authentication
+    url: https://www.charmhealth.com/resources/fhir/authorization.html
+  - type: SMARTOnFHIR
+    url: https://www.charmhealth.com/resources/fhir/smart-on-fhir.html
+  - type: BulkExport
+    url: https://www.charmhealth.com/resources/fhir/bulk-data.html
+  - type: USCore
+    url: https://www.hl7.org/fhir/us/core/
+  - type: Spectral
+    url: spectral/charmhealth-spectral.yml
+- aid: charmhealth:charmhealth-documentreference-api
+  name: CharmHealth DocumentReference API
+  description: Clinical documents
+  humanURL: https://www.charmhealth.com/resources/fhir/index.html
+  baseURL: https://ehr2.charmtracker.com/api/ehr/v2/fhir
+  tags:
+  - DocumentReference
+  properties:
+  - type: OpenAPI
+    url: openapi/charmhealth-documentreference-api-openapi.yml
+  - type: Documentation
+    url: https://www.charmhealth.com/resources/fhir/index.html
+  - type: Authentication
+    url: https://www.charmhealth.com/resources/fhir/authorization.html
+  - type: SMARTOnFHIR
+    url: https://www.charmhealth.com/resources/fhir/smart-on-fhir.html
+  - type: BulkExport
+    url: https://www.charmhealth.com/resources/fhir/bulk-data.html
+  - type: USCore
+    url: https://www.hl7.org/fhir/us/core/
+  - type: Spectral
+    url: spectral/charmhealth-spectral.yml
+- aid: charmhealth:charmhealth-encounter-api
+  name: CharmHealth Encounter API
+  description: Patient encounters and visits
+  humanURL: https://www.charmhealth.com/resources/fhir/index.html
+  baseURL: https://ehr2.charmtracker.com/api/ehr/v2/fhir
+  tags:
+  - Encounter
+  properties:
+  - type: OpenAPI
+    url: openapi/charmhealth-encounter-api-openapi.yml
+  - type: Documentation
+    url: https://www.charmhealth.com/resources/fhir/index.html
+  - type: Authentication
+    url: https://www.charmhealth.com/resources/fhir/authorization.html
+  - type: SMARTOnFHIR
+    url: https://www.charmhealth.com/resources/fhir/smart-on-fhir.html
+  - type: BulkExport
+    url: https://www.charmhealth.com/resources/fhir/bulk-data.html
+  - type: USCore
+    url: https://www.hl7.org/fhir/us/core/
+  - type: Spectral
+    url: spectral/charmhealth-spectral.yml
+- aid: charmhealth:charmhealth-immunization-api
+  name: CharmHealth Immunization API
+  description: Immunization records
+  humanURL: https://www.charmhealth.com/resources/fhir/index.html
+  baseURL: https://ehr2.charmtracker.com/api/ehr/v2/fhir
+  tags:
+  - Immunization
+  properties:
+  - type: OpenAPI
+    url: openapi/charmhealth-immunization-api-openapi.yml
+  - type: Documentation
+    url: https://www.charmhealth.com/resources/fhir/index.html
+  - type: Authentication
+    url: https://www.charmhealth.com/resources/fhir/authorization.html
+  - type: SMARTOnFHIR
+    url: https://www.charmhealth.com/resources/fhir/smart-on-fhir.html
+  - type: BulkExport
+    url: https://www.charmhealth.com/resources/fhir/bulk-data.html
+  - type: USCore
+    url: https://www.hl7.org/fhir/us/core/
+  - type: Spectral
+    url: spectral/charmhealth-spectral.yml
+- aid: charmhealth:charmhealth-medicationrequest-api
+  name: CharmHealth MedicationRequest API
+  description: Medication orders
+  humanURL: https://www.charmhealth.com/resources/fhir/index.html
+  baseURL: https://ehr2.charmtracker.com/api/ehr/v2/fhir
+  tags:
+  - MedicationRequest
+  properties:
+  - type: OpenAPI
+    url: openapi/charmhealth-medicationrequest-api-openapi.yml
+  - type: Documentation
+    url: https://www.charmhealth.com/resources/fhir/index.html
+  - type: Authentication
+    url: https://www.charmhealth.com/resources/fhir/authorization.html
+  - type: SMARTOnFHIR
+    url: https://www.charmhealth.com/resources/fhir/smart-on-fhir.html
+  - type: BulkExport
+    url: https://www.charmhealth.com/resources/fhir/bulk-data.html
+  - type: USCore
+    url: https://www.hl7.org/fhir/us/core/
+  - type: Spectral
+    url: spectral/charmhealth-spectral.yml
+- aid: charmhealth:charmhealth-observation-api
+  name: CharmHealth Observation API
+  description: Vital signs, lab results, and clinical observations
+  humanURL: https://www.charmhealth.com/resources/fhir/index.html
+  baseURL: https://ehr2.charmtracker.com/api/ehr/v2/fhir
+  tags:
+  - Observation
+  properties:
+  - type: OpenAPI
+    url: openapi/charmhealth-observation-api-openapi.yml
+  - type: Documentation
+    url: https://www.charmhealth.com/resources/fhir/index.html
+  - type: Authentication
+    url: https://www.charmhealth.com/resources/fhir/authorization.html
+  - type: SMARTOnFHIR
+    url: https://www.charmhealth.com/resources/fhir/smart-on-fhir.html
+  - type: BulkExport
+    url: https://www.charmhealth.com/resources/fhir/bulk-data.html
+  - type: USCore
+    url: https://www.hl7.org/fhir/us/core/
+  - type: Spectral
+    url: spectral/charmhealth-spectral.yml
+- aid: charmhealth:charmhealth-organization-api
+  name: CharmHealth Organization API
+  description: Provider organizations
+  humanURL: https://www.charmhealth.com/resources/fhir/index.html
+  baseURL: https://ehr2.charmtracker.com/api/ehr/v2/fhir
+  tags:
+  - Organization
+  properties:
+  - type: OpenAPI
+    url: openapi/charmhealth-organization-api-openapi.yml
+  - type: Documentation
+    url: https://www.charmhealth.com/resources/fhir/index.html
+  - type: Authentication
+    url: https://www.charmhealth.com/resources/fhir/authorization.html
+  - type: SMARTOnFHIR
+    url: https://www.charmhealth.com/resources/fhir/smart-on-fhir.html
+  - type: BulkExport
+    url: https://www.charmhealth.com/resources/fhir/bulk-data.html
+  - type: USCore
+    url: https://www.hl7.org/fhir/us/core/
+  - type: Spectral
+    url: spectral/charmhealth-spectral.yml
+- aid: charmhealth:charmhealth-patient-api
+  name: CharmHealth Patient API
+  description: Patient demographic resource
+  humanURL: https://www.charmhealth.com/resources/fhir/index.html
+  baseURL: https://ehr2.charmtracker.com/api/ehr/v2/fhir
+  tags:
+  - Patient
+  properties:
+  - type: OpenAPI
+    url: openapi/charmhealth-patient-api-openapi.yml
+  - type: Documentation
+    url: https://www.charmhealth.com/resources/fhir/index.html
+  - type: Authentication
+    url: https://www.charmhealth.com/resources/fhir/authorization.html
+  - type: SMARTOnFHIR
+    url: https://www.charmhealth.com/resources/fhir/smart-on-fhir.html
+  - type: BulkExport
+    url: https://www.charmhealth.com/resources/fhir/bulk-data.html
+  - type: USCore
+    url: https://www.hl7.org/fhir/us/core/
+  - type: Spectral
+    url: spectral/charmhealth-spectral.yml
+- aid: charmhealth:charmhealth-practitioner-api
+  name: CharmHealth Practitioner API
+  description: Care providers
+  humanURL: https://www.charmhealth.com/resources/fhir/index.html
+  baseURL: https://ehr2.charmtracker.com/api/ehr/v2/fhir
+  tags:
+  - Practitioner
+  properties:
+  - type: OpenAPI
+    url: openapi/charmhealth-practitioner-api-openapi.yml
+  - type: Documentation
+    url: https://www.charmhealth.com/resources/fhir/index.html
+  - type: Authentication
+    url: https://www.charmhealth.com/resources/fhir/authorization.html
+  - type: SMARTOnFHIR
+    url: https://www.charmhealth.com/resources/fhir/smart-on-fhir.html
+  - type: BulkExport
+    url: https://www.charmhealth.com/resources/fhir/bulk-data.html
+  - type: USCore
+    url: https://www.hl7.org/fhir/us/core/
+  - type: Spectral
+    url: spectral/charmhealth-spectral.yml
 common:
+  - type: PostmanWorkspace
+    url: https://www.postman.com/kinlaneapi/charmhealth/overview
   - type: AgenticAccess
     url: agentic-access/charmhealth-agentic-access.yml
   - type: VulnerabilityDisclosure
