@@ -1,0 +1,112 @@
+{
+  "info": {
+    "_postman_id": "8136d339-36aa-44ba-a76c-303e1f89fbe7",
+    "name": "CharmHealth FHIR AllergyIntolerance Capability API",
+    "description": "HL7 FHIR R4 (4.0.1) REST API exposed by CharmHealth EHR conforming to the US Core 3.1.1 Implementation Guide. Supports SMART on FHIR authorization for patient-facing apps, provider-facing apps, and backend services. Resource paths follow FHIR conventions and accept standard FHIR search parameters.\n\nContact Support:\n Name: CharmHealth Developer Support",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T01:19:21.000Z",
+    "updatedAt": "2026-07-28T01:19:21.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-8136d339-36aa-44ba-a76c-303e1f89fbe7"
+  },
+  "item": [
+    {
+      "name": "metadata",
+      "item": [
+        {
+          "name": "Get FHIR CapabilityStatement",
+          "id": "9a189023-1b90-485e-bb16-635882265ef7",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/metadata",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "metadata"
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "1cb3b056-2c15-4647-9940-9cad26e70eab",
+              "name": "CapabilityStatement resource",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "description": "Added as a part of security scheme: oauth2",
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/metadata",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "metadata"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "text",
+              "header": [],
+              "cookie": [],
+              "responseTime": null,
+              "body": null,
+              "createdAt": "2026-07-28T01:19:21.000Z",
+              "updatedAt": "2026-07-28T01:19:21.000Z",
+              "uid": "35240-1cb3b056-2c15-4647-9940-9cad26e70eab"
+            }
+          ],
+          "createdAt": "2026-07-28T01:19:21.000Z",
+          "updatedAt": "2026-07-28T01:19:21.000Z",
+          "uid": "35240-9a189023-1b90-485e-bb16-635882265ef7"
+        }
+      ],
+      "id": "96f51cfd-e939-434c-829e-2f2f723c7a03",
+      "createdAt": "2026-07-28T01:19:21.000Z",
+      "updatedAt": "2026-07-28T01:19:21.000Z",
+      "uid": "35240-96f51cfd-e939-434c-829e-2f2f723c7a03"
+    }
+  ],
+  "auth": {
+    "type": "oauth2",
+    "oauth2": [
+      {
+        "key": "scope",
+        "value": "launch/patient patient/Patient.read patient/Observation.read patient/Condition.read patient/MedicationRequest.read user/*.read",
+        "type": "string"
+      },
+      {
+        "key": "accessTokenUrl",
+        "value": "https://ehr2.charmtracker.com/oauth/v2/token",
+        "type": "string"
+      },
+      {
+        "key": "authUrl",
+        "value": "https://ehr2.charmtracker.com/oauth/v2/auth",
+        "type": "string"
+      },
+      {
+        "key": "grant_type",
+        "value": "authorization_code",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://ehr2.charmtracker.com/api/ehr/v2/fhir"
+    }
+  ]
+}

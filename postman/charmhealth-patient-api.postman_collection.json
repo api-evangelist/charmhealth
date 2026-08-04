@@ -1,0 +1,230 @@
+{
+  "info": {
+    "_postman_id": "6e6154a0-1ac3-41ed-a1b1-4f382f518a70",
+    "name": "CharmHealth FHIR AllergyIntolerance Patient API",
+    "description": "HL7 FHIR R4 (4.0.1) REST API exposed by CharmHealth EHR conforming to the US Core 3.1.1 Implementation Guide. Supports SMART on FHIR authorization for patient-facing apps, provider-facing apps, and backend services. Resource paths follow FHIR conventions and accept standard FHIR search parameters.\n\nContact Support:\n Name: CharmHealth Developer Support",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T01:19:31.000Z",
+    "updatedAt": "2026-07-28T01:19:31.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-6e6154a0-1ac3-41ed-a1b1-4f382f518a70"
+  },
+  "item": [
+    {
+      "name": "Patient",
+      "item": [
+        {
+          "name": "{id}",
+          "item": [
+            {
+              "name": "Read Patient",
+              "id": "4dbc8f06-9878-45b3-bf97-783e2bce672c",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/Patient/:id",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "Patient",
+                    ":id"
+                  ],
+                  "variable": [
+                    {
+                      "id": "090c48fa-103e-4ef3-b55b-122ef7212244",
+                      "key": "id",
+                      "value": "<string>",
+                      "description": "(Required) "
+                    }
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "id": "fb35d891-7ba1-49ed-84a0-4665908c095a",
+                  "name": "Patient resource",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "description": "Added as a part of security scheme: oauth2",
+                        "key": "Authorization",
+                        "value": "<token>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/Patient/:id",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "Patient",
+                        ":id"
+                      ],
+                      "variable": [
+                        {
+                          "key": "id"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "text",
+                  "header": [],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": null,
+                  "createdAt": "2026-07-28T01:19:31.000Z",
+                  "updatedAt": "2026-07-28T01:19:31.000Z",
+                  "uid": "35240-fb35d891-7ba1-49ed-84a0-4665908c095a"
+                }
+              ],
+              "createdAt": "2026-07-28T01:19:31.000Z",
+              "updatedAt": "2026-07-28T01:19:31.000Z",
+              "uid": "35240-4dbc8f06-9878-45b3-bf97-783e2bce672c"
+            }
+          ],
+          "id": "54bbb348-2e5e-44b8-862c-f1095a642fde",
+          "createdAt": "2026-07-28T01:19:31.000Z",
+          "updatedAt": "2026-07-28T01:19:31.000Z",
+          "uid": "35240-54bbb348-2e5e-44b8-862c-f1095a642fde"
+        },
+        {
+          "name": "Search Patient",
+          "id": "a7ab757b-e023-4850-a545-b12f7ea66301",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/Patient?identifier=<string>&name=<string>&birthdate=<date>&gender=<string>",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "Patient"
+              ],
+              "query": [
+                {
+                  "key": "identifier",
+                  "value": "<string>"
+                },
+                {
+                  "key": "name",
+                  "value": "<string>"
+                },
+                {
+                  "key": "birthdate",
+                  "value": "<date>"
+                },
+                {
+                  "key": "gender",
+                  "value": "<string>"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "867f390f-78e9-436e-8b0e-76837f5b4485",
+              "name": "Patient Bundle",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "description": "Added as a part of security scheme: oauth2",
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/Patient?identifier=<string>&name=<string>&birthdate=<date>&gender=<string>",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "Patient"
+                  ],
+                  "query": [
+                    {
+                      "key": "identifier",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "name",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "birthdate",
+                      "value": "<date>"
+                    },
+                    {
+                      "key": "gender",
+                      "value": "<string>"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "text",
+              "header": [],
+              "cookie": [],
+              "responseTime": null,
+              "body": null,
+              "createdAt": "2026-07-28T01:19:31.000Z",
+              "updatedAt": "2026-07-28T01:19:31.000Z",
+              "uid": "35240-867f390f-78e9-436e-8b0e-76837f5b4485"
+            }
+          ],
+          "createdAt": "2026-07-28T01:19:31.000Z",
+          "updatedAt": "2026-07-28T01:19:31.000Z",
+          "uid": "35240-a7ab757b-e023-4850-a545-b12f7ea66301"
+        }
+      ],
+      "id": "38304a40-d062-4a41-8beb-743bd47fd0f0",
+      "createdAt": "2026-07-28T01:19:31.000Z",
+      "updatedAt": "2026-07-28T01:19:31.000Z",
+      "uid": "35240-38304a40-d062-4a41-8beb-743bd47fd0f0"
+    }
+  ],
+  "auth": {
+    "type": "oauth2",
+    "oauth2": [
+      {
+        "key": "scope",
+        "value": "launch/patient patient/Patient.read patient/Observation.read patient/Condition.read patient/MedicationRequest.read user/*.read",
+        "type": "string"
+      },
+      {
+        "key": "accessTokenUrl",
+        "value": "https://ehr2.charmtracker.com/oauth/v2/token",
+        "type": "string"
+      },
+      {
+        "key": "authUrl",
+        "value": "https://ehr2.charmtracker.com/oauth/v2/auth",
+        "type": "string"
+      },
+      {
+        "key": "grant_type",
+        "value": "authorization_code",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://ehr2.charmtracker.com/api/ehr/v2/fhir"
+    }
+  ]
+}

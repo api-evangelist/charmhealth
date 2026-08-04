@@ -1,0 +1,148 @@
+{
+  "info": {
+    "_postman_id": "eeabfd94-5689-41aa-a97a-b8bdbb129c35",
+    "name": "CharmHealth FHIR AllergyIntolerance Observation API",
+    "description": "HL7 FHIR R4 (4.0.1) REST API exposed by CharmHealth EHR conforming to the US Core 3.1.1 Implementation Guide. Supports SMART on FHIR authorization for patient-facing apps, provider-facing apps, and backend services. Resource paths follow FHIR conventions and accept standard FHIR search parameters.\n\nContact Support:\n Name: CharmHealth Developer Support",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T01:19:28.000Z",
+    "updatedAt": "2026-07-28T01:19:28.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-eeabfd94-5689-41aa-a97a-b8bdbb129c35"
+  },
+  "item": [
+    {
+      "name": "Observation",
+      "item": [
+        {
+          "name": "Search Observation",
+          "id": "55d44719-f51e-4b20-a53d-c2cd3e8ceb5b",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/Observation?patient=<string>&category=<string>&code=<string>&date=<string>",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "Observation"
+              ],
+              "query": [
+                {
+                  "key": "patient",
+                  "value": "<string>"
+                },
+                {
+                  "key": "category",
+                  "value": "<string>"
+                },
+                {
+                  "key": "code",
+                  "value": "<string>"
+                },
+                {
+                  "key": "date",
+                  "value": "<string>"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "025a7817-2217-4963-9698-e902143c5b80",
+              "name": "Observation Bundle",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "description": "Added as a part of security scheme: oauth2",
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/Observation?patient=<string>&category=<string>&code=<string>&date=<string>",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "Observation"
+                  ],
+                  "query": [
+                    {
+                      "key": "patient",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "category",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "code",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "date",
+                      "value": "<string>"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "text",
+              "header": [],
+              "cookie": [],
+              "responseTime": null,
+              "body": null,
+              "createdAt": "2026-07-28T01:19:29.000Z",
+              "updatedAt": "2026-07-28T01:19:29.000Z",
+              "uid": "35240-025a7817-2217-4963-9698-e902143c5b80"
+            }
+          ],
+          "createdAt": "2026-07-28T01:19:29.000Z",
+          "updatedAt": "2026-07-28T01:19:29.000Z",
+          "uid": "35240-55d44719-f51e-4b20-a53d-c2cd3e8ceb5b"
+        }
+      ],
+      "id": "49dfe9a9-8e51-4077-9c2d-6df9ecc1490a",
+      "createdAt": "2026-07-28T01:19:29.000Z",
+      "updatedAt": "2026-07-28T01:19:29.000Z",
+      "uid": "35240-49dfe9a9-8e51-4077-9c2d-6df9ecc1490a"
+    }
+  ],
+  "auth": {
+    "type": "oauth2",
+    "oauth2": [
+      {
+        "key": "scope",
+        "value": "launch/patient patient/Patient.read patient/Observation.read patient/Condition.read patient/MedicationRequest.read user/*.read",
+        "type": "string"
+      },
+      {
+        "key": "accessTokenUrl",
+        "value": "https://ehr2.charmtracker.com/oauth/v2/token",
+        "type": "string"
+      },
+      {
+        "key": "authUrl",
+        "value": "https://ehr2.charmtracker.com/oauth/v2/auth",
+        "type": "string"
+      },
+      {
+        "key": "grant_type",
+        "value": "authorization_code",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://ehr2.charmtracker.com/api/ehr/v2/fhir"
+    }
+  ]
+}

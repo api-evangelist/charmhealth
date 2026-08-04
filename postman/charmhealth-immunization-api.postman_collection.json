@@ -1,0 +1,124 @@
+{
+  "info": {
+    "_postman_id": "e02ba6fa-522a-4518-93fb-b194440a0aed",
+    "name": "CharmHealth FHIR AllergyIntolerance Immunization API",
+    "description": "HL7 FHIR R4 (4.0.1) REST API exposed by CharmHealth EHR conforming to the US Core 3.1.1 Implementation Guide. Supports SMART on FHIR authorization for patient-facing apps, provider-facing apps, and backend services. Resource paths follow FHIR conventions and accept standard FHIR search parameters.\n\nContact Support:\n Name: CharmHealth Developer Support",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T01:19:26.000Z",
+    "updatedAt": "2026-07-28T01:19:27.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-e02ba6fa-522a-4518-93fb-b194440a0aed"
+  },
+  "item": [
+    {
+      "name": "Immunization",
+      "item": [
+        {
+          "name": "Search Immunization",
+          "id": "8c7814f8-7c1f-4e50-b6e8-bf881bb20ee6",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/Immunization?patient=<string>",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "Immunization"
+              ],
+              "query": [
+                {
+                  "key": "patient",
+                  "value": "<string>"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "b82e28bf-6dcb-46e9-9595-d1b3703c95cd",
+              "name": "Immunization Bundle",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "description": "Added as a part of security scheme: oauth2",
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/Immunization?patient=<string>",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "Immunization"
+                  ],
+                  "query": [
+                    {
+                      "key": "patient",
+                      "value": "<string>"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "text",
+              "header": [],
+              "cookie": [],
+              "responseTime": null,
+              "body": null,
+              "createdAt": "2026-07-28T01:19:27.000Z",
+              "updatedAt": "2026-07-28T01:19:27.000Z",
+              "uid": "35240-b82e28bf-6dcb-46e9-9595-d1b3703c95cd"
+            }
+          ],
+          "createdAt": "2026-07-28T01:19:27.000Z",
+          "updatedAt": "2026-07-28T01:19:27.000Z",
+          "uid": "35240-8c7814f8-7c1f-4e50-b6e8-bf881bb20ee6"
+        }
+      ],
+      "id": "a503bd3b-238e-4d7b-9e7c-f203e6dc743b",
+      "createdAt": "2026-07-28T01:19:27.000Z",
+      "updatedAt": "2026-07-28T01:19:27.000Z",
+      "uid": "35240-a503bd3b-238e-4d7b-9e7c-f203e6dc743b"
+    }
+  ],
+  "auth": {
+    "type": "oauth2",
+    "oauth2": [
+      {
+        "key": "scope",
+        "value": "launch/patient patient/Patient.read patient/Observation.read patient/Condition.read patient/MedicationRequest.read user/*.read",
+        "type": "string"
+      },
+      {
+        "key": "accessTokenUrl",
+        "value": "https://ehr2.charmtracker.com/oauth/v2/token",
+        "type": "string"
+      },
+      {
+        "key": "authUrl",
+        "value": "https://ehr2.charmtracker.com/oauth/v2/auth",
+        "type": "string"
+      },
+      {
+        "key": "grant_type",
+        "value": "authorization_code",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://ehr2.charmtracker.com/api/ehr/v2/fhir"
+    }
+  ]
+}

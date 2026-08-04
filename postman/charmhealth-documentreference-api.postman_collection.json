@@ -1,0 +1,132 @@
+{
+  "info": {
+    "_postman_id": "f4c80917-df54-4885-9ee2-f7e9193d19d0",
+    "name": "CharmHealth FHIR AllergyIntolerance DocumentReference API",
+    "description": "HL7 FHIR R4 (4.0.1) REST API exposed by CharmHealth EHR conforming to the US Core 3.1.1 Implementation Guide. Supports SMART on FHIR authorization for patient-facing apps, provider-facing apps, and backend services. Resource paths follow FHIR conventions and accept standard FHIR search parameters.\n\nContact Support:\n Name: CharmHealth Developer Support",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T01:19:25.000Z",
+    "updatedAt": "2026-07-28T01:19:25.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-f4c80917-df54-4885-9ee2-f7e9193d19d0"
+  },
+  "item": [
+    {
+      "name": "DocumentReference",
+      "item": [
+        {
+          "name": "Search DocumentReference",
+          "id": "ffa629f9-e5eb-43c4-b78e-73296a58d426",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/DocumentReference?patient=<string>&type=<string>",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "DocumentReference"
+              ],
+              "query": [
+                {
+                  "key": "patient",
+                  "value": "<string>"
+                },
+                {
+                  "key": "type",
+                  "value": "<string>"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "34f24077-49eb-4515-b936-337bdaeab3c0",
+              "name": "DocumentReference Bundle",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "description": "Added as a part of security scheme: oauth2",
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/DocumentReference?patient=<string>&type=<string>",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "DocumentReference"
+                  ],
+                  "query": [
+                    {
+                      "key": "patient",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "type",
+                      "value": "<string>"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "text",
+              "header": [],
+              "cookie": [],
+              "responseTime": null,
+              "body": null,
+              "createdAt": "2026-07-28T01:19:25.000Z",
+              "updatedAt": "2026-07-28T01:19:25.000Z",
+              "uid": "35240-34f24077-49eb-4515-b936-337bdaeab3c0"
+            }
+          ],
+          "createdAt": "2026-07-28T01:19:25.000Z",
+          "updatedAt": "2026-07-28T01:19:25.000Z",
+          "uid": "35240-ffa629f9-e5eb-43c4-b78e-73296a58d426"
+        }
+      ],
+      "id": "33468f49-3bc2-416f-8dc3-e9654835dfdc",
+      "createdAt": "2026-07-28T01:19:25.000Z",
+      "updatedAt": "2026-07-28T01:19:25.000Z",
+      "uid": "35240-33468f49-3bc2-416f-8dc3-e9654835dfdc"
+    }
+  ],
+  "auth": {
+    "type": "oauth2",
+    "oauth2": [
+      {
+        "key": "scope",
+        "value": "launch/patient patient/Patient.read patient/Observation.read patient/Condition.read patient/MedicationRequest.read user/*.read",
+        "type": "string"
+      },
+      {
+        "key": "accessTokenUrl",
+        "value": "https://ehr2.charmtracker.com/oauth/v2/token",
+        "type": "string"
+      },
+      {
+        "key": "authUrl",
+        "value": "https://ehr2.charmtracker.com/oauth/v2/auth",
+        "type": "string"
+      },
+      {
+        "key": "grant_type",
+        "value": "authorization_code",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://ehr2.charmtracker.com/api/ehr/v2/fhir"
+    }
+  ]
+}

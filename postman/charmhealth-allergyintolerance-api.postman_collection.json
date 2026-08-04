@@ -1,0 +1,132 @@
+{
+  "info": {
+    "_postman_id": "be69d306-a7d4-43b6-a03d-9914d64dae33",
+    "name": "CharmHealth FHIR AllergyIntolerance API",
+    "description": "HL7 FHIR R4 (4.0.1) REST API exposed by CharmHealth EHR conforming to the US Core 3.1.1 Implementation Guide. Supports SMART on FHIR authorization for patient-facing apps, provider-facing apps, and backend services. Resource paths follow FHIR conventions and accept standard FHIR search parameters.\n\nContact Support:\n Name: CharmHealth Developer Support",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T01:19:04.000Z",
+    "updatedAt": "2026-07-28T01:19:04.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-be69d306-a7d4-43b6-a03d-9914d64dae33"
+  },
+  "item": [
+    {
+      "name": "AllergyIntolerance",
+      "item": [
+        {
+          "name": "Search AllergyIntolerance",
+          "id": "78fe9440-01f0-4b0d-bb66-059274362d23",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/AllergyIntolerance?patient=<string>&clinical-status=<string>",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "AllergyIntolerance"
+              ],
+              "query": [
+                {
+                  "key": "patient",
+                  "value": "<string>"
+                },
+                {
+                  "key": "clinical-status",
+                  "value": "<string>"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "98ba44b0-7cc2-469c-86c9-cc8b49272a2e",
+              "name": "AllergyIntolerance Bundle",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "description": "Added as a part of security scheme: oauth2",
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/AllergyIntolerance?patient=<string>&clinical-status=<string>",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "AllergyIntolerance"
+                  ],
+                  "query": [
+                    {
+                      "key": "patient",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "clinical-status",
+                      "value": "<string>"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "text",
+              "header": [],
+              "cookie": [],
+              "responseTime": null,
+              "body": null,
+              "createdAt": "2026-07-28T01:19:04.000Z",
+              "updatedAt": "2026-07-28T01:19:04.000Z",
+              "uid": "35240-98ba44b0-7cc2-469c-86c9-cc8b49272a2e"
+            }
+          ],
+          "createdAt": "2026-07-28T01:19:04.000Z",
+          "updatedAt": "2026-07-28T01:19:04.000Z",
+          "uid": "35240-78fe9440-01f0-4b0d-bb66-059274362d23"
+        }
+      ],
+      "id": "686963a3-9e51-4f28-8a98-eaf8711897fd",
+      "createdAt": "2026-07-28T01:19:04.000Z",
+      "updatedAt": "2026-07-28T01:19:04.000Z",
+      "uid": "35240-686963a3-9e51-4f28-8a98-eaf8711897fd"
+    }
+  ],
+  "auth": {
+    "type": "oauth2",
+    "oauth2": [
+      {
+        "key": "scope",
+        "value": "launch/patient patient/Patient.read patient/Observation.read patient/Condition.read patient/MedicationRequest.read user/*.read",
+        "type": "string"
+      },
+      {
+        "key": "accessTokenUrl",
+        "value": "https://ehr2.charmtracker.com/oauth/v2/token",
+        "type": "string"
+      },
+      {
+        "key": "authUrl",
+        "value": "https://ehr2.charmtracker.com/oauth/v2/auth",
+        "type": "string"
+      },
+      {
+        "key": "grant_type",
+        "value": "authorization_code",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://ehr2.charmtracker.com/api/ehr/v2/fhir"
+    }
+  ]
+}

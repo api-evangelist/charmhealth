@@ -1,0 +1,40 @@
+{
+  "provider": "charmhealth",
+  "sources": [
+    "charmhealth-allergyintolerance-api-openapi.yml",
+    "charmhealth-appointment-api-openapi.yml",
+    "charmhealth-capability-api-openapi.yml",
+    "charmhealth-careplan-api-openapi.yml",
+    "charmhealth-careteam-api-openapi.yml",
+    "charmhealth-condition-api-openapi.yml",
+    "charmhealth-documentreference-api-openapi.yml",
+    "charmhealth-encounter-api-openapi.yml",
+    "charmhealth-immunization-api-openapi.yml",
+    "charmhealth-medicationrequest-api-openapi.yml",
+    "charmhealth-observation-api-openapi.yml",
+    "charmhealth-organization-api-openapi.yml",
+    "charmhealth-patient-api-openapi.yml",
+    "charmhealth-practitioner-api-openapi.yml"
+  ],
+  "outputs": [
+    "charmhealth-allergyintolerance-api-openapi.yml",
+    "charmhealth-appointment-api-openapi.yml",
+    "charmhealth-capability-api-openapi.yml",
+    "charmhealth-careplan-api-openapi.yml",
+    "charmhealth-careteam-api-openapi.yml",
+    "charmhealth-condition-api-openapi.yml",
+    "charmhealth-documentreference-api-openapi.yml",
+    "charmhealth-encounter-api-openapi.yml",
+    "charmhealth-immunization-api-openapi.yml",
+    "charmhealth-medicationrequest-api-openapi.yml",
+    "charmhealth-observation-api-openapi.yml",
+    "charmhealth-organization-api-openapi.yml",
+    "charmhealth-patient-api-openapi.yml",
+    "charmhealth-practitioner-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
