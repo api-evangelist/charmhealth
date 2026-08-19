@@ -35,7 +35,7 @@ tags:
   - US Core
 created: '2025-02-21'
 modified: '2026-05-19'
-specificationVersion: '0.20'
+specificationVersion: '0.23'
 apis:
 - aid: charmhealth:charmhealth-allergyintolerance-api
   name: CharmHealth AllergyIntolerance API
