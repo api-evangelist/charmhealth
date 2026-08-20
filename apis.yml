@@ -87,6 +87,8 @@ apis:
   humanURL: https://www.charmhealth.com/resources/fhir/index.html
   baseURL: https://ehr2.charmtracker.com/api/ehr/v2/fhir
   tags:
+  - Capabilities
+  tags_raw:
   - Capability
   properties:
   - type: OpenAPI
