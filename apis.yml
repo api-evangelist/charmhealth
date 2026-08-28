@@ -5,6 +5,18 @@ description: >-
   Cycle Management, Patient Engagement, and TeleHealth tooling. CharmHealth exposes an HL7 FHIR R4 API conformant to the
   US Core Implementation Guide that lets third-party applications query patient medical records, manage clinical
   resources, and integrate with the EHR using SMART on FHIR OAuth 2.0 authorization.
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: true
+  label: Hosted service · you call their endpoint
+  confidence: high
+  source:
+  - openapi
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: freemium
   onboarding: self-serve
