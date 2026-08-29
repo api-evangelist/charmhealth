@@ -1,0 +1,34 @@
+slug: charmhealth
+provider: CharmHealth
+generated_by: planning/capability-mapping/scripts/classify_capabilities.py
+model: claude-opus-5
+frame:
+- Healthcare Providers
+min_confidence: 0.7
+capability_model:
+  source: https://github.com/vincentmakes/turbo-ea-capabilities
+  license: CC-BY-4.0
+  attribution: Turbo EA Capabilities by Vincent Verdet — Turbo EA, https://github.com/vincentmakes/turbo-ea-capabilities,
+    CC BY 4.0
+  notice: NOTICE
+edge_count: 2
+edges:
+- tag: Condition
+  spec_file: charmhealth-condition-api-openapi.yml
+  capability_id: BC-2900.60
+  capability_id_l1: BC-2900
+  capability_name: Healthcare Interoperability Operations
+  confidence: 0.7
+  evidence: GET /Condition  searchCondition  Search Condition; "Resource paths follow FHIR conventions
+    and accept standard FHIR search parameters"
+  reason: Search-only FHIR resource surface over EHR problem-list data; this is health information exchange
+    via FHIR endpoints rather than documentation authoring or care delivery.
+- tag: DocumentReference
+  spec_file: charmhealth-documentreference-api-openapi.yml
+  capability_id: BC-2900.60
+  capability_id_l1: BC-2900
+  capability_name: Healthcare Interoperability Operations
+  confidence: 0.7
+  evidence: GET /DocumentReference  searchDocumentReference  Search DocumentReference
+  reason: FHIR DocumentReference search exposes clinical documents to external apps — an interoperability/health-record-access
+    operation, not document authoring.

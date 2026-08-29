@@ -360,6 +360,9 @@ apis:
   - type: Spectral
     url: spectral/charmhealth-spectral.yml
 common:
+  - type: CapabilityMap
+    url: capabilities/charmhealth-capability-edges.yml
+    name: CharmHealth Business Capability Map
   - type: PostmanWorkspace
     url: https://www.postman.com/kinlaneapi/charmhealth/overview
   - type: AgenticAccess
