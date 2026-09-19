@@ -233,6 +233,8 @@ apis:
   humanURL: https://www.charmhealth.com/resources/fhir/index.html
   baseURL: https://ehr2.charmtracker.com/api/ehr/v2/fhir
   tags:
+  - Patients
+  tags_raw:
   - Patient
   properties:
   - type: OpenAPI
@@ -277,6 +279,8 @@ apis:
   humanURL: https://www.charmhealth.com/resources/fhir/index.html
   baseURL: https://ehr2.charmtracker.com/api/ehr/v2/fhir
   tags:
+  - AllergyIntolerance
+  tags_raw:
   - Allergy Intolerance
   properties:
   - type: OpenAPI
@@ -299,6 +303,8 @@ apis:
   humanURL: https://www.charmhealth.com/resources/fhir/index.html
   baseURL: https://ehr2.charmtracker.com/api/ehr/v2/fhir
   tags:
+  - CarePlan
+  tags_raw:
   - Care plan
   properties:
   - type: OpenAPI
@@ -321,6 +327,8 @@ apis:
   humanURL: https://www.charmhealth.com/resources/fhir/index.html
   baseURL: https://ehr2.charmtracker.com/api/ehr/v2/fhir
   tags:
+  - DocumentReference
+  tags_raw:
   - Document Reference
   properties:
   - type: OpenAPI
@@ -343,6 +351,8 @@ apis:
   humanURL: https://www.charmhealth.com/resources/fhir/index.html
   baseURL: https://ehr2.charmtracker.com/api/ehr/v2/fhir
   tags:
+  - MedicationRequest
+  tags_raw:
   - Medication Request
   properties:
   - type: OpenAPI
