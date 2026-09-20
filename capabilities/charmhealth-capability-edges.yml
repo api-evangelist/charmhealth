@@ -24,7 +24,8 @@ edges:
   reason: Search-only FHIR resource surface over EHR problem-list data; this is health information exchange
     via FHIR endpoints rather than documentation authoring or care delivery.
 - tag: DocumentReference
-  spec_file: charmhealth-documentreference-api-openapi.yml
+  spec_file: charmhealth-document-reference-api-openapi.yml
+  reanchored_from: charmhealth-documentreference-api-openapi.yml
   capability_id: BC-2900.60
   capability_id_l1: BC-2900
   capability_name: Healthcare Interoperability Operations
