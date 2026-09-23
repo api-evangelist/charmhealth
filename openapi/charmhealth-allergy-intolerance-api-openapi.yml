@@ -1,6 +1,6 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
-  title: CharmHealth FHIR AllergyIntolerance MedicationRequest API
+  title: CharmHealth FHIR Allergy Intolerance API
   description: HL7 FHIR R4 (4.0.1) REST API exposed by CharmHealth EHR conforming to the US Core 3.1.1 Implementation Guide. Supports SMART on FHIR authorization for patient-facing apps, provider-facing apps, and backend services. Resource paths follow FHIR conventions and accept standard FHIR search parameters.
   version: 4.0.1
   contact:
@@ -12,27 +12,27 @@ servers:
 security:
 - smartOnFhir: []
 tags:
-- name: MedicationRequest
-  description: Medication orders
+- name: Allergy Intolerance
+  description: Patient allergies and intolerances
 paths:
-  /MedicationRequest:
+  /AllergyIntolerance:
     get:
-      operationId: searchMedicationRequest
-      summary: Search MedicationRequest
+      operationId: searchAllergyIntolerance
+      summary: Search AllergyIntolerance
       tags:
-      - MedicationRequest
+      - Allergy Intolerance
       parameters:
       - name: patient
         in: query
         schema:
           type: string
-      - name: status
+      - name: clinical-status
         in: query
         schema:
           type: string
       responses:
         '200':
-          description: MedicationRequest Bundle
+          description: AllergyIntolerance Bundle
 components:
   securitySchemes:
     smartOnFhir:

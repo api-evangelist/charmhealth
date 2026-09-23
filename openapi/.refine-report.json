@@ -1,20 +1,7 @@
 {
   "provider": "charmhealth",
   "sources": [
-    "charmhealth-allergyintolerance-api-openapi.yml",
-    "charmhealth-appointment-api-openapi.yml",
-    "charmhealth-capability-api-openapi.yml",
-    "charmhealth-careplan-api-openapi.yml",
-    "charmhealth-careteam-api-openapi.yml",
-    "charmhealth-condition-api-openapi.yml",
-    "charmhealth-documentreference-api-openapi.yml",
-    "charmhealth-encounter-api-openapi.yml",
-    "charmhealth-immunization-api-openapi.yml",
-    "charmhealth-medicationrequest-api-openapi.yml",
-    "charmhealth-observation-api-openapi.yml",
-    "charmhealth-organization-api-openapi.yml",
-    "charmhealth-patient-api-openapi.yml",
-    "charmhealth-practitioner-api-openapi.yml"
+    "_original/charmhealth-fhir-api-openapi.yml"
   ],
   "outputs": [
     "charmhealth-allergyintolerance-api-openapi.yml",
@@ -32,9 +19,31 @@
     "charmhealth-patient-api-openapi.yml",
     "charmhealth-practitioner-api-openapi.yml"
   ],
-  "archived": [],
+  "archived": [
+    "deleted 4 superseded output(s) from the previous generation"
+  ],
   "errors": [],
   "warnings": [],
-  "notes": [],
-  "skipped": []
+  "notes": [
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "charmhealth-fhir-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "superseded outputs removed: charmhealth-allergy-intolerance-api-openapi.yml, charmhealth-care-plan-api-openapi.yml, charmhealth-document-reference-api-openapi.yml, charmhealth-medication-request-api-openapi.yml",
+    "apis.yml register: written (+4 apis, 14 total)"
+  ],
+  "skipped": [
+    "charmhealth-allergy-intolerance-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "charmhealth-appointment-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "charmhealth-capability-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "charmhealth-care-plan-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "charmhealth-careteam-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "charmhealth-condition-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "charmhealth-document-reference-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "charmhealth-encounter-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "charmhealth-immunization-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "charmhealth-medication-request-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "charmhealth-observation-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "charmhealth-organization-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "charmhealth-patient-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "charmhealth-practitioner-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }
