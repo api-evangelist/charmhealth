@@ -46,7 +46,7 @@ tags:
   - SMART on FHIR
   - US Core
 created: '2025-02-21'
-modified: '2026-05-19'
+modified: '2026-10-06'
 specificationVersion: '0.23'
 apis:
 - aid: charmhealth:charmhealth-appointment-api
@@ -362,6 +362,10 @@ apis:
   - type: Spectral
     url: spectral/charmhealth-spectral.yml
 common:
+  - url: https://go.charmhealth.com/blog
+    type: Blog
+  - url: https://go.charmhealth.com/blog/rss.xml
+    type: BlogRSS
   - type: CapabilityMap
     url: capabilities/charmhealth-capability-edges.yml
     name: CharmHealth Business Capability Map
