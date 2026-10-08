@@ -362,6 +362,12 @@ apis:
   - type: Spectral
     url: spectral/charmhealth-spectral.yml
 common:
+  - type: Plans
+    url: plans/charmhealth-plans-pricing.yml
+  - type: RateLimits
+    url: rate-limits/charmhealth-rate-limits.yml
+  - type: FinOps
+    url: finops/charmhealth-finops.yml
   - url: https://go.charmhealth.com/blog
     type: Blog
   - url: https://go.charmhealth.com/blog/rss.xml
