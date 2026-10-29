@@ -1,4 +1,4 @@
-# CharmHealth (charmhealth)
+# CharmHealth
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -66,82 +66,183 @@
 
 CharmHealth is a healthcare technology platform offering Electronic Health Records (EHR), Practice Management, Revenue Cycle Management, Patient Engagement, and TeleHealth tooling. CharmHealth exposes an HL7 FHIR R4 API conformant to the US Core Implementation Guide that lets third-party applications query patient medical records, manage clinical resources, and integrate with the EHR using SMART on FHIR OAuth 2.0 authorization.
 
-**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/charmhealth/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/charmhealth/refs/heads/main/apis.yml)
+**Areas:** Electronic Health Records · FHIR · Healthcare · HL7 · Patient Engagement · Patients · SMART on FHIR · US Core
 
-## Scope
+## CharmHealth on APIs.io
 
-- **Type:** Index
-- **Position:** Consumer
-- **Access:** 3rd-Party
+Everything profiled for CharmHealth is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/charmhealth/](https://apis.io/providers/charmhealth/)** — or go straight to one of the APIs or properties below.
 
-## Tags
+### APIs (14)
 
-- EHR
-- EMR
-- FHIR
-- Healthcare
-- HL7
-- Patient Engagement
-- Patients
-- SMART on FHIR
-- US Core
+- [CharmHealth Appointment API](https://apis.io/apis/charmhealth/charmhealth-appointment-api/) — Scheduled appointments
+- [CharmHealth Capability API](https://apis.io/apis/charmhealth/charmhealth-capability-api/) — Server capability statement
+- [CharmHealth CareTeam API](https://apis.io/apis/charmhealth/charmhealth-careteam-api/) — Care teams
+- [CharmHealth Condition API](https://apis.io/apis/charmhealth/charmhealth-condition-api/) — Diagnoses and problems
+- [CharmHealth Encounter API](https://apis.io/apis/charmhealth/charmhealth-encounter-api/) — Patient encounters and visits
+- [CharmHealth Immunization API](https://apis.io/apis/charmhealth/charmhealth-immunization-api/) — Immunization records
+- [CharmHealth Observation API](https://apis.io/apis/charmhealth/charmhealth-observation-api/) — Vital signs, lab results, and clinical observations
+- [CharmHealth Organization API](https://apis.io/apis/charmhealth/charmhealth-organization-api/) — Provider organizations
+- [CharmHealth Patient API](https://apis.io/apis/charmhealth/charmhealth-patient-api/) — Patient demographic resource
+- [CharmHealth Practitioner API](https://apis.io/apis/charmhealth/charmhealth-practitioner-api/) — Care providers
+- [CharmHealth Allergy Intolerance API](https://apis.io/apis/charmhealth/charmhealth-allergy-intolerance-api/) — Patient allergies and intolerances
+- [CharmHealth Care plan API](https://apis.io/apis/charmhealth/charmhealth-care-plan-api/) — Care plans
+- [CharmHealth Document Reference API](https://apis.io/apis/charmhealth/charmhealth-document-reference-api/) — Clinical documents
+- [CharmHealth Medication Request API](https://apis.io/apis/charmhealth/charmhealth-medication-request-api/) — Medication orders
 
-## Timestamps
+### Published properties
 
-- **Created:** 2025-02-21
-- **Modified:** 2026-05-19
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-## APIs
+#### Agentic access (1)
 
-### CharmHealth FHIR API
+Which operations an agent can call, which act, and which need a human in the loop.
 
-CharmHealth EHR FHIR API conforms to FHIR R4 (4.0.1) and the US Core STU 3.1.1 Implementation Guide. It supports 30+ FHIR resources covering clinical (AllergyIntolerance, Condition, Procedure, Immunization, MedicationRequest), care coordination (CarePlan, CareTeam, Goal, Encounter), administrative (Patient, Practitioner, Organization, Location, Appointment), diagnostic (DiagnosticReport, Observation), and documentation resources (DocumentReference, QuestionnaireResponse, Provenance). Authentication uses SMART on FHIR with OAuth 2.0 authorization code flow, PKCE for public clients, and JWT-assertion backend services authorization for system access.
+- [Charmhealth Agentic Access](https://apis.io/agentic-access/charmhealth/charmhealth-agentic-access/)
 
-- **Human URL:** [https://www.charmhealth.com/resources/fhir/index.html](https://www.charmhealth.com/resources/fhir/index.html)
-- **Base URL:** `https://ehr2.charmtracker.com/api/ehr/v2/fhir`
+#### JSON Schema (2)
 
-#### Tags
+The data models the API reads and writes.
 
-- FHIR
-- HL7
-- Healthcare
-- SMART on FHIR
-- US Core
+- [CharmHealth FHIR Observation](https://apis.io/schemas/charmhealth/charmhealth-observation/)
+- [CharmHealth FHIR Patient](https://apis.io/schemas/charmhealth/charmhealth-patient/)
 
-#### Properties
+#### JSON-LD (1)
 
-- [Documentation](https://www.charmhealth.com/resources/fhir/index.html)
-- [Authentication](https://www.charmhealth.com/resources/fhir/authorization.html)
-- [S M A R T On F H I R](https://www.charmhealth.com/resources/fhir/smart-on-fhir.html)
-- [Bulk Export](https://www.charmhealth.com/resources/fhir/bulk-data.html)
-- [U S Core](https://www.hl7.org/fhir/us/core/)
-- [OpenAPI](openapi/charmhealth-fhir-api-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/charmhealth-fhir-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/charmhealth-fhir-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-- [Spectral Rules](spectral/charmhealth-spectral.yml) — [Spectral](https://docs.stoplight.io/docs/spectral)
+Linked-data contexts for the provider's vocabulary.
 
-## Common Properties
+- [Charmhealth Context](https://apis.io/jsonld/charmhealth/charmhealth-context/)
 
-- [GitHub Organization](https://github.com/CharmHealth)
-- [LinkedIn](https://www.linkedin.com/company/charmhealth)
+#### Collections (29)
+
+Postman and Open Collection request collections.
+
+- [CharmHealth FHIR AllergyIntolerance API](https://apis.io/collections/charmhealth/open-charmhealth-allergyintolerance-api/)
+- [CharmHealth FHIR AllergyIntolerance Appointment API](https://apis.io/collections/charmhealth/open-charmhealth-appointment-api/)
+- [CharmHealth FHIR AllergyIntolerance Capability API](https://apis.io/collections/charmhealth/open-charmhealth-capability-api/)
+- [CharmHealth FHIR AllergyIntolerance CarePlan API](https://apis.io/collections/charmhealth/open-charmhealth-careplan-api/)
+- [CharmHealth FHIR AllergyIntolerance CareTeam API](https://apis.io/collections/charmhealth/open-charmhealth-careteam-api/)
+- [CharmHealth FHIR AllergyIntolerance Condition API](https://apis.io/collections/charmhealth/open-charmhealth-condition-api/)
+- [CharmHealth FHIR AllergyIntolerance DocumentReference API](https://apis.io/collections/charmhealth/open-charmhealth-documentreference-api/)
+- [CharmHealth FHIR AllergyIntolerance Encounter API](https://apis.io/collections/charmhealth/open-charmhealth-encounter-api/)
+- [CharmHealth FHIR API](https://apis.io/collections/charmhealth/open-charmhealth-fhir-api/)
+- [CharmHealth FHIR AllergyIntolerance Immunization API](https://apis.io/collections/charmhealth/open-charmhealth-immunization-api/)
+- [CharmHealth FHIR AllergyIntolerance MedicationRequest API](https://apis.io/collections/charmhealth/open-charmhealth-medicationrequest-api/)
+- [CharmHealth FHIR AllergyIntolerance Observation API](https://apis.io/collections/charmhealth/open-charmhealth-observation-api/)
+- [CharmHealth FHIR AllergyIntolerance Organization API](https://apis.io/collections/charmhealth/open-charmhealth-organization-api/)
+- [CharmHealth FHIR AllergyIntolerance Patient API](https://apis.io/collections/charmhealth/open-charmhealth-patient-api/)
+- [CharmHealth FHIR AllergyIntolerance Practitioner API](https://apis.io/collections/charmhealth/open-charmhealth-practitioner-api/)
+- [CharmHealth FHIR AllergyIntolerance API](https://apis.io/collections/charmhealth/postman-charmhealth-allergyintolerance-api/)
+- [CharmHealth FHIR AllergyIntolerance Appointment API](https://apis.io/collections/charmhealth/postman-charmhealth-appointment-api/)
+- [CharmHealth FHIR AllergyIntolerance Capability API](https://apis.io/collections/charmhealth/postman-charmhealth-capability-api/)
+- [CharmHealth FHIR AllergyIntolerance CarePlan API](https://apis.io/collections/charmhealth/postman-charmhealth-careplan-api/)
+- [CharmHealth FHIR AllergyIntolerance CareTeam API](https://apis.io/collections/charmhealth/postman-charmhealth-careteam-api/)
+- [CharmHealth FHIR AllergyIntolerance Condition API](https://apis.io/collections/charmhealth/postman-charmhealth-condition-api/)
+- [CharmHealth FHIR AllergyIntolerance DocumentReference API](https://apis.io/collections/charmhealth/postman-charmhealth-documentreference-api/)
+- [CharmHealth FHIR AllergyIntolerance Encounter API](https://apis.io/collections/charmhealth/postman-charmhealth-encounter-api/)
+- [CharmHealth FHIR AllergyIntolerance Immunization API](https://apis.io/collections/charmhealth/postman-charmhealth-immunization-api/)
+- [CharmHealth FHIR AllergyIntolerance MedicationRequest API](https://apis.io/collections/charmhealth/postman-charmhealth-medicationrequest-api/)
+- …and 4 more published on APIs.io
+
+#### Governance rules (1)
+
+Spectral rulesets for the provider's contracts.
+
+- [CharmHealth — jsonschema rules](https://apis.io/rules/charmhealth/charmhealth-jsonschema-spectral-rules/)
+
+#### Security (3)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Charmhealth Authentication](https://apis.io/security/charmhealth/charmhealth-authentication/)
+- [Charmhealth Domain Security](https://apis.io/security/charmhealth/charmhealth-domain-security/)
+- [Charmhealth Vulnerability Disclosure](https://apis.io/security/charmhealth/charmhealth-vulnerability-disclosure/)
+
+#### OAuth scopes (1)
+
+The permissions the API asks for.
+
+- [Charmhealth Scopes](https://apis.io/scopes/charmhealth/charmhealth-scopes/)
+
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Charmhealth Plans Pricing](https://apis.io/plans/charmhealth/charmhealth-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Charmhealth Rate Limits](https://apis.io/rate-limits/charmhealth/charmhealth-rate-limits/)
+
+#### FinOps (1)
+
+What the API costs to run, by operation.
+
+- [Charmhealth Finops](https://apis.io/finops/charmhealth/charmhealth-finops/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
 - [Website](https://www.charmhealth.com/)
 - [Documentation](https://www.charmhealth.com/resources/fhir/index.html)
-- [Developer](https://www.charmhealth.com/developer/)
-- [News](https://www.charmhealth.com/ehr/ehr-trade-shows.html)
-- [Press Releases](https://www.charmhealth.com/ehr/press-release.html)
-- [Case Studies](https://casestudy.charmhealth.com/charmhealth-case-study-landing-page/)
-- [Blog](https://www.charmhealth.com/blog/)
-- [Newsletter](https://www.charmhealth.com/newsletter/)
-- [Webinars](https://www.charmhealth.com/ehr/webinar.html)
 - [Pricing](https://www.charmhealth.com/ehr/ehr-pricing.html)
 - [Support](https://www.charmhealth.com/support/)
-- [Terms of Service](https://www.charmhealth.com/ehr/termsofservice.html)
-- [Privacy Policy](https://www.charmhealth.com/privacy-policy.html)
-- [JSON-LD](json-ld/charmhealth-context.jsonld) — [JSON-LD](https://www.w3.org/TR/json-ld11/)
-- [JSON Schema](json-schema/charmhealth-patient-schema.json) — [JSON Schema](https://json-schema.org/specification)
-- [JSON Schema](json-schema/charmhealth-observation-schema.json) — [JSON Schema](https://json-schema.org/specification)
+- [Blog](https://go.charmhealth.com/blog)
+- [Terms of service](https://www.charmhealth.com/ehr/termsofservice.html)
+- [Privacy policy](https://www.charmhealth.com/privacy-policy.html)
+- [GitHub](https://github.com/CharmHealth)
 
-## Maintainers
+## API Evangelist rating
 
-**FN:** Kin Lane
-**Email:** kin@apievangelist.com
+**Kin Score 35.3** — thin · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 67.0 |
+| Contract quality | 48.7 |
+| Contract governance | 9.8 |
+| Operational transparency | 10.5 |
+| Developer ergonomics | 10.7 |
+| Access clarity | 39.5 |
+
+**Agent readiness 26.6** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | na |
+| MCP Server | — |
+| Auth Clarity | negotiable (partial credit) |
+| Idempotency | na |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | derived (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | na |
+| Delegated Identity | documented (partial credit) |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 37.5** — Health
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/charmhealth/](https://apis.io/providers/charmhealth/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for CharmHealth: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/charmhealth/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
